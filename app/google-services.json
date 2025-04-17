@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719694186567",
+    "project_id": "comandapp-8562b",
+    "storage_bucket": "comandapp-8562b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719694186567:android:f21fb2a658242a7df1c962",
+        "android_client_info": {
+          "package_name": "com.example.comandapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGSOtHtK2h2cV-i03Lju72wzuZMxyLGUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
