@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Pagina" />
+        <activity android:name=".MeseroActivity" />
+        <activity android:name=".CocineroActivity" />
+
     </application>
 
 </manifest>
