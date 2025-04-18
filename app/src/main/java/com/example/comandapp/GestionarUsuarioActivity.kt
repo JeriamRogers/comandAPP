@@ -2,6 +2,7 @@ package com.example.comandapp
 
 //noinspection SuspiciousImport
 import android.R
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -63,6 +64,12 @@ class GestionarUsuariosActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Faltan campos por completar", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        binding.btnVolverAlAdmin.setOnClickListener {
+            val intent = Intent(this, AdminActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
