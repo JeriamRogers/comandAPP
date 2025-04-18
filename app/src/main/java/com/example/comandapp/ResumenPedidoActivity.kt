@@ -1,5 +1,6 @@
 package com.example.comandapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.comandapp.databinding.ActivityResumenPedidoBinding
@@ -20,9 +21,13 @@ class ResumenPedidoActivity : AppCompatActivity() {
 
         binding.tvResumenDetalle.text = "Mesa: $mesa\n\n$resumen"
 
-        // Botón para volver (debo agregar finalizar y volver al principio)
         binding.btnFinalizar.setOnClickListener {
+            val intent = Intent(this, MeseroActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
             finish()
         }
+
+
     }
 }

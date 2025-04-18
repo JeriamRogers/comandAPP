@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Mesa -->
+        <TextView
+            android:id="@+id/tvMesaPedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mesa 1"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black" />
+
+        <!-- Detalle del pedido -->
+        <TextView
+            android:id="@+id/tvDetallePedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detalle del pedido aquí"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/darker_gray" />
+
+        <!-- Botón para marcar como listo -->
+        <Button
+            android:id="@+id/btnListo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pedido Listo"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
