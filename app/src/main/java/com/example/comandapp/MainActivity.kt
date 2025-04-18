@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
                                     .addOnSuccessListener { dataSnapshot ->
                                         val rol = dataSnapshot.getValue(String::class.java)
                                         when (rol) {
+                                            "admin" -> {
+                                                val intent = Intent(this, AdminActivity::class.java)
+                                                startActivity(intent)
+                                                finish()
+                                            }
                                             "mesero" -> {
                                                 val intent = Intent(this, MeseroActivity::class.java)
                                                 startActivity(intent)
