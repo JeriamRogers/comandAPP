@@ -16,16 +16,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.google.android.material.appbar.MaterialToolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerViewProductos"
         app:title="Productos"
-        app:titleCentered="true"
-        app:titleTextColor="@android:color/white"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:titleTextColor="@android:color/white" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

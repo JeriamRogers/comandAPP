@@ -11,7 +11,7 @@ class ProductosActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductosBinding
     private lateinit var database: DatabaseReference
-    private lateinit var productosAdapter: ProductosAdapter
+    public lateinit var productosAdapter: ProductosAdapter
     private lateinit var mesaSeleccionada: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,21 +19,22 @@ class ProductosActivity : AppCompatActivity() {
         binding = ActivityProductosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Configurar el Toolbar como ActionBar
+        setSupportActionBar(binding.topAppBar)
+
         // Obtener el nombre de la mesa seleccionada desde el Intent
         mesaSeleccionada = intent.getStringExtra("mesaSeleccionada") ?: "Mesa no seleccionada"
 
         // Mostrar el nombre de la mesa seleccionada en el TopBar
-        supportActionBar?.title = "Productos para $mesaSeleccionada"
+        supportActionBar?.title = "Pedido: $mesaSeleccionada"
 
-        // Inicializar la referencia de la base de datos de Firebase
+
         database = FirebaseDatabase.getInstance().getReference("productos")
-
-        // Inicializamos el RecyclerView y el adaptador
         productosAdapter = ProductosAdapter()
         binding.recyclerViewProductos.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewProductos.adapter = productosAdapter
 
-        // Cargar los productos desde Firebase
+
         cargarProductos()
     }
 
