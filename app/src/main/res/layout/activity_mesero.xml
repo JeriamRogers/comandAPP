@@ -28,6 +28,15 @@
         app:srcCompat="@android:drawable/ic_input_add"
         app:backgroundTint="@color/white" />
 
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar sesion"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="50dp" />
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

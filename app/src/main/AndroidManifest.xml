@@ -25,6 +25,8 @@
         <activity android:name=".CocineroActivity" />
         <activity android:name=".AdminActivity" />
         <activity android:name=".GestionarUsuariosActivity" />
+        <activity android:name=".ProductosActivity" />
+        <activity android:name=".ResumenPedidoActivity" />
 
 
     </application>

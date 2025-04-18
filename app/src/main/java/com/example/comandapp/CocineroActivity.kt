@@ -1,10 +1,13 @@
 package com.example.comandapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.comandapp.databinding.ActivityCocineroBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class CocineroActivity : AppCompatActivity() {
@@ -12,15 +15,20 @@ class CocineroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCocineroBinding
     private lateinit var database: DatabaseReference
     private lateinit var adapter: PedidosAdapter
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCocineroBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Iniciar firebaseAuth
+        auth = FirebaseAuth.getInstance()
+
         // Configurar Toolbar
         setSupportActionBar(binding.toolbarCocinero)
         supportActionBar?.title = "Pedidos"
+
 
         // Inicializar Firebase y RecyclerView
         database = FirebaseDatabase.getInstance().getReference("pedidos")
@@ -30,7 +38,17 @@ class CocineroActivity : AppCompatActivity() {
 
         // Cargar pedidos desde Firebase
         cargarPedidos()
+
+        binding.btnCerrarSesion.setOnClickListener {
+            auth.signOut()
+            Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
+
 
     private fun cargarPedidos() {
         database.addValueEventListener(object : ValueEventListener {
@@ -57,4 +75,10 @@ class CocineroActivity : AppCompatActivity() {
             }
         })
     }
+
+
+
+
+
+
 }

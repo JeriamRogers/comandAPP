@@ -8,15 +8,20 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.comandapp.databinding.ActivityMeseroBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class MeseroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMeseroBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMeseroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Iniciar firebaseAuth
+        auth = FirebaseAuth.getInstance()
 
         // Boton FAB abre el dialogo para las mesas
         binding.fabNuevoPedido.setOnClickListener {
@@ -39,6 +44,15 @@ class MeseroActivity : AppCompatActivity() {
                 }
                 .setNegativeButton("Cancelar", null)
                 .show()
+        }
+
+        binding.btnCerrarSesion.setOnClickListener {
+            auth.signOut()
+            Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
