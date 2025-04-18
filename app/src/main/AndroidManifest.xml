@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".MeseroActivity" />
         <activity android:name=".CocineroActivity" />
+        <activity android:name=".ProductosActivity" />
 
     </application>
 

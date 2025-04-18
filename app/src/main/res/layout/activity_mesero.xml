@@ -16,7 +16,6 @@
         app:title="Mesero"
         app:titleCentered="true"
         app:titleTextColor="@android:color/white"
-        app:menu="@menu/menu_mesero"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
