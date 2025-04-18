@@ -24,6 +24,7 @@
         <activity android:name=".MeseroActivity" />
         <activity android:name=".CocineroActivity" />
         <activity android:name=".ProductosActivity" />
+        <activity android:name=".ResumenPedidoActivity" />
 
     </application>
 

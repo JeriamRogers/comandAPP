@@ -31,40 +31,35 @@ class ProductosAdapter : RecyclerView.Adapter<ProductosAdapter.ProductoViewHolde
         notifyItemChanged(position)
     }
 
+    // ✅ Esta función es la que necesitas para generar el resumen del pedido
+    fun obtenerProductos(): List<Producto> {
+        return productosList
+    }
+
     class ProductoViewHolder(private val binding: ItemProductoBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(producto: Producto) {
             binding.productoNombre.text = producto.nombre
             binding.productoPrecio.text = "${producto.precio} CLP"
-            var cantidad = producto.cantidad // Asegúrate de que cada producto tenga una cantidad inicial
+            var cantidad = producto.cantidad
 
-            // Mostrar la cantidad en el TextView
             binding.tvQuantity.text = cantidad.toString()
-
-            // Deshabilitar el botón "menos" si la cantidad es 0
             binding.botonmenos.isEnabled = cantidad > 0
 
-            // Botón de "más"
             binding.botonmas.setOnClickListener {
                 cantidad++
                 binding.tvQuantity.text = cantidad.toString()
                 binding.botonmenos.isEnabled = cantidad > 0
-
-                // Notificar al adaptador que se ha actualizado la cantidad
                 (binding.root.context as ProductosActivity).productosAdapter.actualizarCantidad(adapterPosition, cantidad)
             }
 
-            // Botón de "menos"
             binding.botonmenos.setOnClickListener {
                 if (cantidad > 0) {
                     cantidad--
                     binding.tvQuantity.text = cantidad.toString()
                     binding.botonmenos.isEnabled = cantidad > 0
-
-                    // Notificar al adaptador que se ha actualizado la cantidad
                     (binding.root.context as ProductosActivity).productosAdapter.actualizarCantidad(adapterPosition, cantidad)
                 }
             }
         }
     }
 }
-
