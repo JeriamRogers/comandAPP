@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inicio de firebaseAuth
+        // Inicializar FirebaseAuth
         auth = FirebaseAuth.getInstance()
 
         binding.btnLogin.setOnClickListener {
@@ -44,19 +44,22 @@ class MainActivity : AppCompatActivity() {
                                                 finish()
                                             }
                                             "mesero" -> {
+                                                // rol de mesero en MeseroActivity
                                                 val intent = Intent(this, MeseroActivity::class.java)
                                                 startActivity(intent)
-                                                finish()
+                                                finish()  // Finaliza esta actividad
                                             }
                                             "cocinero" -> {
+                                                // rol de concinero en CocineroActivity
                                                 val intent = Intent(this, CocineroActivity::class.java)
                                                 startActivity(intent)
-                                                finish()
+                                                finish()  // Finaliza esta actividad
                                             }
                                             else -> {
                                                 Toast.makeText(this, "Rol no reconocido", Toast.LENGTH_SHORT).show()
                                             }
                                         }
+
                                     }
                                     .addOnFailureListener {
                                         Toast.makeText(this, "Error al obtener el rol", Toast.LENGTH_SHORT).show()
@@ -70,9 +73,5 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Faltan campos por completar", Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
-
     }
 }
