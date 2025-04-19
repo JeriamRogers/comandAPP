@@ -19,7 +19,7 @@
             android:id="@+id/tvMesaPedido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mesa 1"
+            android:text="@string/mesa_1"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="@android:color/black" />
@@ -29,7 +29,7 @@
             android:id="@+id/tvDetallePedido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Detalle del pedido aquí"
+            android:text="@string/detalle_del_pedido_aqu"
             android:textSize="16sp"
             android:layout_marginTop="4dp"
             android:textColor="@android:color/darker_gray" />
@@ -39,7 +39,7 @@
             android:id="@+id/btnListo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pedido Listo"
+            android:text="@string/pedido_listo"
             android:layout_marginTop="12dp"
             android:layout_gravity="end"/>
     </LinearLayout>

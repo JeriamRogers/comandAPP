@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="24dp"
-        android:contentDescription="Nuevo Pedido"
+        android:contentDescription="@string/nuevo_pedido"
         app:srcCompat="@android:drawable/ic_input_add"
         app:backgroundTint="@color/white" />
 
@@ -32,7 +32,7 @@
         android:id="@+id/btnCerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cerrar sesion"
+        android:text="@string/cerrar_sesion"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="50dp" />
 

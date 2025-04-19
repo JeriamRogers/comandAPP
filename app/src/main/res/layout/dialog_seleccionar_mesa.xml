@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:text="Selecciona una mesa"
+        android:text="@string/selecciona_una_mesa"
         android:textSize="18sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

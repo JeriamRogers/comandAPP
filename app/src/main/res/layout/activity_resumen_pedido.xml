@@ -10,7 +10,7 @@
         android:id="@+id/tvResumenDetalle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Resumen del pedido"
+        android:text="@string/resumen_del_pedido"
         android:textSize="16sp"
         android:background="@android:color/darker_gray"
         android:textColor="@android:color/black"
@@ -24,7 +24,7 @@
         android:id="@+id/btnFinalizar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Finalizar"
+        android:text="@string/finalizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

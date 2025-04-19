@@ -25,33 +25,28 @@ class ProductosActivity : AppCompatActivity() {
         // Configurar el Toolbar como ActionBar
         setSupportActionBar(binding.topAppBar)
 
-        // Obtener el nombre de la mesa seleccionada desde el Intent
         mesaSeleccionada = intent.getStringExtra("mesaSeleccionada") ?: "Mesa no seleccionada"
 
-        // Mostrar el nombre de la mesa seleccionada en el TopBar
         supportActionBar?.title = "Pedido: $mesaSeleccionada"
 
-        // Inicializar Firebase
+        // Inicializar firebase
         database = FirebaseDatabase.getInstance().getReference("productos")
         productosAdapter = ProductosAdapter()
         binding.recyclerViewProductos.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewProductos.adapter = productosAdapter
 
-        // Cargar productos desde Firebase
         cargarProductos()
 
-        // Confirmar pedido y pasar a ResumenPedidoActivity
         binding.btnConfirmarPedido.setOnClickListener {
             val resumen = generarResumenPedido()
 
             if (resumen.isNotEmpty()) {
-                // Lanzar nueva pantalla con resumen
                 val intent = Intent(this, ResumenPedidoActivity::class.java)
                 intent.putExtra("resumen", resumen)
                 intent.putExtra("mesa", mesaSeleccionada)
                 startActivity(intent)
 
-                // Guardar en Firebase
+                // Guardar en firebase
                 val pedido = mapOf(
                     "mesa" to mesaSeleccionada,
                     "detalle" to resumen,

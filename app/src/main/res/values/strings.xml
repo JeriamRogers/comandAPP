@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">comandAPP</string>
+    <string name="gestionar_usuarios">Gestionar Usuarios</string>
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="correo">Correo</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="registrar_usuario">Registrar Usuario</string>
+    <string name="volver_al_men">Volver al Menú</string>
+    <string name="login">comandAPP</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="nuevo_pedido">Nuevo Pedido</string>
+    <string name="cerrar_sesion">Cerrar sesion</string>
+    <string name="confirmar_pedido">Confirmar Pedido</string>
+    <string name="resumen_del_pedido">Resumen del pedido</string>
+    <string name="finalizar">Finalizar</string>
+    <string name="selecciona_una_mesa">Selecciona una mesa</string>
+    <string name="mesa_1">Mesa 1</string>
+    <string name="detalle_del_pedido_aqu">Detalle del pedido aquí</string>
+    <string name="pedido_listo">Pedido Listo</string>
+    <string name="producto">Producto</string>
+    <string name="_1000_clp">1000 CLP</string>
+    <string name="menos">-</string>
+    <string name="_0">0</string>
+    <string name="mas">+</string>
 </resources>
